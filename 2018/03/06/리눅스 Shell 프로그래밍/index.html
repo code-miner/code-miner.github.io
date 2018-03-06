@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Code Miner">
 <meta property="og:description" content="Step1  이미지 추가  새로 만들기 &amp;gt; 메모리, 2048Mu &amp;gt; 기존 가상 하드 디스크 사용, ubuntu1604   공유 폴더 추가  설정 &amp;gt; 공유 폴더 &amp;gt; 추가, share (자동 마운트)   계정 : linux / ubuntu  Linux System 주요 구성 요소  computer hardware &amp;gt; Linux ker">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-06T05:54:47.951Z">
+<meta property="og:updated_time" content="2018-03-06T06:03:51.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스 Shell 프로그래밍">
 <meta name="twitter:description" content="Step1  이미지 추가  새로 만들기 &amp;gt; 메모리, 2048Mu &amp;gt; 기존 가상 하드 디스크 사용, ubuntu1604   공유 폴더 추가  설정 &amp;gt; 공유 폴더 &amp;gt; 추가, share (자동 마운트)   계정 : linux / ubuntu  Linux System 주요 구성 요소  computer hardware &amp;gt; Linux ker">
@@ -311,7 +311,7 @@
 <li><p>bin(기본 실행파일), sbin(super 유저), usr/bin(설치)</p>
 </li>
 <li><p>which &gt; 파일 위치 확인</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ㅆㅆㅆlinux@ubuntu:/etc$ <span class="built_in">which</span> bash</span><br><span class="line">/bin/bash</span><br><span class="line">linux@ubuntu:/etc$ <span class="built_in">which</span> gcc</span><br><span class="line">/usr/bin/gcc</span><br><span class="line">linux@ubuntu:/etc$ <span class="built_in">which</span> dash	dash 도 특정 영역에서 사용하기 때문에 설치되어 있음</span><br><span class="line">/bin/dash</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">linux@ubuntu:/etc$ <span class="built_in">which</span> bash</span><br><span class="line">/bin/bash</span><br><span class="line">linux@ubuntu:/etc$ <span class="built_in">which</span> gcc</span><br><span class="line">/usr/bin/gcc</span><br><span class="line">linux@ubuntu:/etc$ <span class="built_in">which</span> dash	dash 도 특정 영역에서 사용하기 때문에 설치되어 있음</span><br><span class="line">/bin/dash</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>dash 실행</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">linux@ubuntu:~$ dash</span><br><span class="line">$ ps</span><br><span class="line">  PID TTY          TIME CMD</span><br><span class="line"> 4228 pts/4    00:00:00 bash</span><br><span class="line"> 4266 pts/4    00:00:00 dash 	Subshell 이라고 명명함 </span><br><span class="line"> 4267 pts/4    00:00:00 ps</span><br></pre></td></tr></table></figure>
