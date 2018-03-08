@@ -217,6 +217,71 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2018/03/08/3rd Party library 의 dependency 추가 (local repository 사용)/">
+                            리눅스 Shell 프로그래밍
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-03-08T16:03:08+09:00">
+	
+		    Mar 08, 2018
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Maven/">Maven</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="/images/maven-logo.png" alt=""></p>
+<h2 id="3rd-Party-library-사용"><a href="#3rd-Party-library-사용" class="headerlink" title="3rd Party library 사용"></a>3rd Party library 사용</h2><p>maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)<br>라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)</p>
+<h2 id="설정-방법"><a href="#설정-방법" class="headerlink" title="설정 방법"></a>설정 방법</h2><p>아래 방법으로 설정한다.</p>
+<h4 id="pom-xml-수정"><a href="#pom-xml-수정" class="headerlink" title="pom.xml 수정"></a>pom.xml 수정</h4><p>maven 의 pom.xml 에 아래 내요을 추가한다.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- local repository 를 추가한다. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 프로젝트 내에 src\main\repository\Altibase\jdbc\driver\altibase\5.1.5.46 와 같이 디렉토리 생성되어 있음 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Altibase\jdbc\driver 은 패키지명 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- altibase\5.1.5.46 은 파일명 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 라이브러리 파일은 altibase-5.1.5.46.jar 가 복사되어 있음 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- DO NOT set id to "local" because it is reserved by Maven --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span>&gt;</span>project-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>Project Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url</span>&gt;</span>file://$&#123;project.basedir&#125;/src/main/repository<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- dependency 를 추가한다. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>Altibase.jdbc.driver<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> <span class="comment">&lt;!-- 라이브러리 패키지명 --&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>altibase<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span> <span class="comment">&lt;!-- 라이브러리명 --&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.5.46<span class="tag">&lt;/<span class="name">version</span>&gt;</span> <span class="comment">&lt;!-- 버전명 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="디렉토리-생성-및-라이브러리-복사"><a href="#디렉토리-생성-및-라이브러리-복사" class="headerlink" title="디렉토리 생성 및 라이브러리 복사"></a>디렉토리 생성 및 라이브러리 복사</h4><p>프로젝트 내에, src\main\repository\Altibase\jdbc\driver\altibase\5.1.5.46 경로의 디렉토리를 생성한다.</p>
+<ul>
+<li>src\main\repository 는 repository 의 base 경로이다.</li>
+<li>Altibase\jdbc\driver 라이브러리의 패키지명이다.</li>
+<li>altibase\5.1.5.46 라이브러리 파일명이다.</li>
+</ul>
+<p>라이브러리를 생성한 디렉토리에 복사한다.</p>
+<ul>
+<li>altibase-5.1.5.46.jar</li>
+</ul>
+<h4 id="메이븐-빌드"><a href="#메이븐-빌드" class="headerlink" title="메이븐 빌드"></a>메이븐 빌드</h4><p>위와 같이 설정을 하면, pom.xml 에 에러가 발생하는 경우가 있다. 이를 해결하기 위해서 maven goal(mvn package) 를 실행한다. </p>
+<h4 id="확인"><a href="#확인" class="headerlink" title="확인"></a>확인</h4><p>Maven Dependencies 에 라이브러리가 복사되어 있는지 확인한다.</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2018/03/08/3rd Party library 의 dependency 추가 (local repository 사용)/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2018/02/17/Spring-Framework-개념/">
                             Spring Framework 개념
                         </a>
@@ -1497,6 +1562,25 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://code-miner.github.io/2018/03/08/3rd Party library 의 dependency 추가 (local repository 사용)/">
+                            <h3 class="media-heading">리눅스 Shell 프로그래밍</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Mar 8, 2018
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -1504,7 +1588,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                3 posts found
+                4 posts found
             </p>
         </div>
     </div>
