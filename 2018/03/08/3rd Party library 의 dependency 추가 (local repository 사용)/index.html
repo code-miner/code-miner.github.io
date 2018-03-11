@@ -17,19 +17,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="3rd Party library 사용maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.) 설">
+    <meta name="description" content="maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)">
 <meta name="keywords" content="Spring,Spring Framework,Maven">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="3rd Party library 의 dependency (local repository)">
 <meta property="og:url" content="https://code-miner.github.io/2018/03/08/3rd Party library 의 dependency 추가 (local repository 사용)/index.html">
 <meta property="og:site_name" content="Code Miner">
-<meta property="og:description" content="3rd Party library 사용maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.) 설">
+<meta property="og:description" content="maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://code-miner.github.io/images/maven-logo.png">
-<meta property="og:updated_time" content="2018-03-11T01:53:10.785Z">
+<meta property="og:updated_time" content="2018-03-11T02:50:03.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3rd Party library 의 dependency (local repository)">
-<meta name="twitter:description" content="3rd Party library 사용maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.) 설">
+<meta name="twitter:description" content="maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)">
 <meta name="twitter:image" content="https://code-miner.github.io/images/maven-logo.png">
     
     
@@ -60,7 +60,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="2">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">Code Miner</a>
@@ -84,7 +84,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="2">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -206,7 +206,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="2"
                  class="
                         hasCoverMetaIn
                         ">
@@ -241,7 +241,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><img src="/images/maven-logo.png" alt=""></p>
+            <!-- excerpt -->
+<p><img src="/images/maven-logo.png" alt=""></p>
 <h2 id="3rd-Party-library-사용"><a href="#3rd-Party-library-사용" class="headerlink" title="3rd Party library 사용"></a>3rd Party library 사용</h2><p>maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)<br>라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)</p>
 <h2 id="설정-방법"><a href="#설정-방법" class="headerlink" title="설정 방법"></a>설정 방법</h2><p>아래 방법으로 설정한다.</p>
 <h4 id="pom-xml-수정"><a href="#pom-xml-수정" class="headerlink" title="pom.xml 수정"></a>pom.xml 수정</h4><p>maven 의 pom.xml 에 아래 내용을 추가한다.</p>
@@ -258,7 +259,6 @@
 </ul>
 <h4 id="메이븐-빌드"><a href="#메이븐-빌드" class="headerlink" title="메이븐 빌드"></a>메이븐 빌드</h4><p>위와 같이 설정을 하면, pom.xml 에 에러가 발생하는 경우가 있다. 이를 해결하기 위해서 maven goal(mvn package) 를 실행한다. </p>
 <h4 id="확인"><a href="#확인" class="headerlink" title="확인"></a>확인</h4><p>Maven Dependencies 에 라이브러리가 복사되어 있는지 확인한다.</p>
-
             
 
         </div>
@@ -367,7 +367,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -442,7 +442,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="2">
     <i id="btn-close-shareoptions" class="fa fa-close"></i>
     <ul class="share-options">
         
@@ -546,7 +546,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><a id="more"></a>
+<p>미루고 미루던 기술 블로그를 드디어!! 만들어 보기로 한다. Github Page 와 Hexo 를 이용한다.</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -565,7 +566,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><a id="more"></a>
+<p>Spring Framework 의 기본 개념을 이해하려고 한다. (DI/IoC, AOP, MVC 등)</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -584,7 +586,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><a id="more"></a>
+<p>리눅스 Shell 의 개념, 프로그램 작성 방법 등을 이해하고자 한다.</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -603,7 +606,8 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><a id="more"></a>
+<p>maven repository 에서 관리되지 않는 라이브러리를 사용하게 되었다. (Altibase jdbc driver)<br>라이브러리 관리를 위해 maven 의 pom.xml 에 dependency 를 추가하고 싶을 때가 있다. 여러 방법이 있지만, 아래 방법으로 해결하였다. (형상 관리 측면에서도 괜찮다고 생각한다.)</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
