@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://code-miner.github.io/"/>
-  <updated>2018-03-11T04:29:42.798Z</updated>
+  <updated>2018-03-11T05:01:41.959Z</updated>
   <id>https://code-miner.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ECMAScript 2015 주요 개념</title>
+    <link href="https://code-miner.github.io/2018/03/11/ECMAScript-2015-%EC%A3%BC%EC%9A%94-%EA%B0%9C%EB%85%90/"/>
+    <id>https://code-miner.github.io/2018/03/11/ECMAScript-2015-주요-개념/</id>
+    <published>2018-03-11T04:51:38.000Z</published>
+    <updated>2018-03-11T05:01:41.959Z</updated>
+    
+    <content type="html"><![CDATA[<!-- excerpt --><p><img src="javascript.jpg" alt=""></p><h2 id="들어가며"><a href="#들어가며" class="headerlink" title="들어가며"></a>들어가며</h2><p>ECMAScript 2015 (ES6) 를 학습하며, 주요 개념을 정리, 메모 한다. 앞으로 ES6 를 사용하는데 있어 꼭 기억해야 하는 부분만 기록하도록 한다.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;ECMAScript 2015 (ES6) 를 학습하며, 주요 개념을 정리, 메모 한다.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://code-miner.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://code-miner.github.io/tags/JavaScript/"/>
+    
+      <category term="ECMAScript 2015" scheme="https://code-miner.github.io/tags/ECMAScript-2015/"/>
+    
+      <category term="ES6" scheme="https://code-miner.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>3rd Party library 의 dependency</title>
